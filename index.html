@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        header nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+        }
+        header .cta-button {
+            background-color: #ff6200;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .hero {
+            background-image: url('your-hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .cta-button-hero {
+            background-color: #ff6200;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        .models, .features, .values, .testimonials {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .models h2, .features h2, .values h2, .testimonials h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .model-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .model-card {
+            width: 30%;
+            margin: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .model-card img {
+            width: 100%;
+            height: auto;
+        }
+        .model-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+        .cta-button-main {
+            background-color: #ff6200;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .testimonials-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .testimonial {
+            margin: 0 20px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 5px solid #ff6200;
+}
+
+/* Form Heading */
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form Layout */
+.contact form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for form */
+.contact form:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6200;
+}
+
+/* Textarea Specific Styling */
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+/* Focused Input Label Animation */
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label {
+    font-size: 0.9em;
+    color: #ff6200;
+    transform: translateY(-20px);
+}
+
+/* Button Styling */
+button.submit-btn {
+    background-color: #ff6200;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button.submit-btn:hover {
+    background-color: #e55b00;
+    transform: translateY(-3px);
+}
+
+button.submit-btn:active {
+    background-color: #cc5200;
+    transform: translateY(1px);
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .contact form {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .contact h2 {
+        font-size: 2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Vehicle Company</div>
+        <nav>
+            <a href="#models">Models</a>
+            <a href="#features">Features</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#dealer">Dealer Locator</a>
+        </nav>
+        <a href="#test-drive" class="cta-button">Request a Test Drive</a>
+    </header>
+
+    <section class="hero">
+        <h1>Drive into the Future with Vehicle Company</h1>
+        <p>Explore our innovative, reliable, and eco-friendly vehicles.</p>
+        <a href="#models" class="cta-button-hero">Browse Our Models</a>
+    </section>
+
+    <section id="models" class="models">
+        <h2>Our Latest Models</h2>
+        <div class="model-grid">
+            <div class="model-card">
+                <img src="car1.jpg" alt="Model 1">
+                <h3>Model 1</h3>
+                <p>Starting at $25,000</p>
+            </div>
+            <div class="model-card">
+                <img src="car2.jpg" alt="Model 2">
+                <h3>Model 2</h3>
+                <p>Starting at $30,000</p>
+            </div>
+            <div class="model-card">
+                <img src="car3.jpg" alt="Model 3">
+                <h3>Model 3</h3>
+                <p>Starting at $35,000</p>
+            </div>
+        </div>
+        <a href="#models" class="cta-button-main">See All Models</a>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Innovation at Its Best</h2>
+        <div class="feature-cards">
+            <div class="feature">
+                <h3>Autonomous Driving</h3>
+                <p>Next-gen self-driving capabilities.</p>
+            </div>
+            <div class="feature">
+                <h3>Hybrid Technology</h3>
+                <p>Environmentally friendly performance.</p>
+            </div>
+            <div class="feature">
+                <h3>Safety Features</h3>
+                <p>Advanced systems to keep you safe.</p>
+            </div>
+        </div>
+        <a href="#features" class="cta-button-main">Learn More About Features</a>
+    </section>
+
+    <section id="values" class="values">
+        <h2>Our Commitment</h2>
+        <p>We are dedicated to sustainability, quality, and customer satisfaction. Discover how we’re driving change in the automotive industry.</p>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Are Saying</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <p>"This car has transformed my daily commute!"</p>
+                <p>- John D.</p>
+            </div>
+            <div class="testimonial">
+                <p>"The best purchase I’ve made this year!"</p>
+                <p>- Sarah W.</p>
+            </div>
+        </div>
+    </section>
+
+   <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Vehicle Company | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+</body>
+</html>
