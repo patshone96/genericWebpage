@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://resources.hellocustomer.com/hubfs/HC.WebsiteSDK.V2/website-touchpoint-v2.js"></script>
+<script>
+    var urlBuilder = new hcWebsiteTouchpoint.UrlBuilder({
+        baseUrl: "https://my.survey.hellocustomer.com",
+        tenantId: "7c5347a5-9c5a-49ab-9358-244f76c57f1d",
+        touchPointId: "4a93330e-17ec-41df-bd14-959fafe132df",
+        language: "FR",
+        extra: {
+            //isPreview: true,  /* -- remove this preview setting when in production -- */ 
+        }
+    });
+    var modalSurvey = new hcWebsiteTouchpoint.ModalSurvey(urlBuilder, {});
+                // modalSurvey.show()  /* -- don't forget to place "modalSurvey.open()" where you want to trigger the display of the survey -- */
+</script>
     <!-- Google Tag Manager -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -256,22 +270,6 @@ button.submit-btn:active {
     </style>
 </head>
 <body>
-
-     
-<script src="https://resources.hellocustomer.com/hubfs/HC.WebsiteSDK.V2/website-touchpoint-v2.js"></script>
-<script>
-    var urlBuilder = new hcWebsiteTouchpoint.UrlBuilder({
-        baseUrl: "https://my.survey.hellocustomer.com",
-        tenantId: "7c5347a5-9c5a-49ab-9358-244f76c57f1d",
-        touchPointId: "4a93330e-17ec-41df-bd14-959fafe132df",
-        language: "FR",
-        extra: {
-            //isPreview: true,  /* -- remove this preview setting when in production -- */ 
-        }
-    });
-    var modalSurvey = new hcWebsiteTouchpoint.ModalSurvey(urlBuilder, {});
-                // modalSurvey.show()  /* -- don't forget to place "modalSurvey.open()" where you want to trigger the display of the survey -- */
-</script>
 <!--     Google Tag Manager -->
  <!-- Google Tag Manager (noscript) -->
 <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N56M3MGM"
@@ -287,6 +285,7 @@ height="1000" width="1000" style="display:none;visibility:hidden"></iframe></nos
             <a href="#contact">Contact Us</a>
             <a href="#dealer">Dealer Locator</a>
         </nav>
+          <button onclick="modalSurvey.open()">Submit</button>
         <a href="#test-drive" class="cta-button">Request a Test Drive</a>
     </header>
 
