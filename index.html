@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P6PKT6H3');</script>
+})(window,document,'script','dataLayer','GTM-P6PKT6H3');</script> -->
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -256,10 +256,26 @@ button.submit-btn:active {
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager -->
+
+     
+<script src="https://resources.hellocustomer.com/hubfs/HC.WebsiteSDK.V2/website-touchpoint-v2.js"></script>
+<script>
+    var urlBuilder = new hcWebsiteTouchpoint.UrlBuilder({
+        baseUrl: "https://my.survey.hellocustomer.com",
+        tenantId: "7c5347a5-9c5a-49ab-9358-244f76c57f1d",
+        touchPointId: "4a93330e-17ec-41df-bd14-959fafe132df",
+        language: "FR",
+        extra: {
+            //isPreview: true,  /* -- remove this preview setting when in production -- */ 
+        }
+    });
+    var modalSurvey = new hcWebsiteTouchpoint.ModalSurvey(urlBuilder, {});
+                // modalSurvey.show()  /* -- don't forget to place "modalSurvey.open()" where you want to trigger the display of the survey -- */
+</script>
+<!--     Google Tag Manager -->
  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N56M3MGM"
-height="1000" width="1000" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N56M3MGM"
+height="1000" width="1000" style="display:none;visibility:hidden"></iframe></noscript> -->
 <!-- End Google Tag Manager (noscript) -->
 
     <header>
